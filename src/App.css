@@ -1,38 +1,107 @@
-.App {
-  text-align: center;
+body{
+  background: #16222A;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #3A6073, #16222A);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #3A6073, #16222A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: rgb(255, 255, 255);
+  overflow-x: hidden;
+}  
+.main{
+  margin-top: 5vh;
+  width: auto;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.cardGroup{
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-evenly;
+}
+.card{
+ width: 20rem;
+/* From https://css.glass */
+background: rgba(18, 18, 18, 0.51);
+border-radius: 8px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5.1px);
+-webkit-backdrop-filter: blur(7.1px);
+}
+
+form{
+  border-top: 2px solid #6d6d6d;
+  padding: 2rem;
+}
+
+#comment, #transaction{
+  background: none;
+  border: none;
+  border-bottom: 2px solid #6d6d6d;
+  color: #ffffff;
+}
+#comment, #transaction:focus{
+  box-shadow: none;
+}
+
+.transaction-card{
+  width: auto;
+  border-left: 2px solid rgb(136, 255, 17);
+  color: #ffffff;
+}
+.list {
+  border-top: 2px solid #6d6d6d;
+  list-style-type: none;
+  padding: 2rem;
+  margin-bottom: 40px;
+  display: flex;
+  flex-flow: column wrap;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.list li {
+  width: 25rem;
+  background: rgba(0, 0, 0, 0.283);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2.8px);
+  -webkit-backdrop-filter: blur(2.8px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin: 10px 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.list li.plus {
+  border-right: 5px solid #2ecc71;
+}
+
+.list li.minus {
+  border-right: 5px solid #c0392b;
+}
+
+
+.delete-btn {
+  cursor: pointer;
+  background-color: #e74c3c;
+  border: 0;
+  color: #fff;
+  font-size: 20px;
+  line-height: 20px;
+  padding: 2px 5px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-100%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.list li:hover .delete-btn {
+  opacity: 1;
+}
+
+@media screen and (max-width: 768px) {  
+  .cardGroup{
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
   }
-  to {
-    transform: rotate(360deg);
+  .card, .list li {
+    width: 15rem;
   }
 }
