@@ -18,7 +18,7 @@ export const  AddTransaction = () => {
     }
     return (
         <>
-            <h3 className="mb-3"> Add New Tranaction</h3>
+            <h3 className="mb-3"> Add New Transaction</h3>
             <form onSubmit={handleTransaction}>
                 <div className="mb-3 row">
                     <label htmlFor="comment" className="col-sm-2 col-form-label">Description</label>
